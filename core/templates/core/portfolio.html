@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | TeamFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/portfolio.css' %}">
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <p class="eyebrow">Portfolio</p>
+            <h1>Building practical products with clean design and reliable Django code.</h1>
+            <p class="lede">
+                I design and ship focused web apps that help people organize work, habits, and data with less friction.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="button button-primary">View Projects</a>
+                <a href="#contact" class="button button-secondary">Contact</a>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="section-header">
+                <p class="eyebrow">Skills</p>
+                <h2>Tools I use to build fast and keep systems maintainable.</h2>
+            </div>
+            <div class="chips">
+                {% for skill in skills %}
+                    <span class="chip">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="panel" id="projects">
+            <div class="section-header">
+                <p class="eyebrow">Selected Work</p>
+                <h2>A few projects that show the range of my work.</h2>
+            </div>
+            <div class="projects">
+                {% for project in projects %}
+                    <article class="project-card">
+                        <p class="project-stack">{{ project.stack }}</p>
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.description }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="panel contact" id="contact">
+            <div>
+                <p class="eyebrow">Contact</p>
+                <h2>Open to freelance work, product partnerships, and Django builds.</h2>
+            </div>
+            <a class="button button-primary" href="mailto:hello@example.com">hello@example.com</a>
+        </section>
+    </main>
+</body>
+</html>

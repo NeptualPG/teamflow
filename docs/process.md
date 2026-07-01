@@ -1,4 +1,4 @@
-Steps
+# Steps:
 
 1. Define feature in Miro
 2. Create ticket in Linear
